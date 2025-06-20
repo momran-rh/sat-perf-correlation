@@ -56,7 +56,7 @@
         - pmlogger
         - pmcd
 
-    - name: Install statsd and hotproc
+    - name: Install statsd, hotproc and openmetrics
       ansible.builtin.command: bash Install
       args:
         chdir: "{{ item }}"
@@ -157,6 +157,7 @@
         path: /usr/share/foreman/config/initializers/5_telemetry.rb
         insertbefore: 'telemetry.add_allowed_tags!\(allowed_labels\)'
         block: 'allowed_labels.merge!(SETTINGS[:telemetry][:allowed_labels]) if SETTINGS[:telemetry] && SETTINGS[:telemetry][:allowed_labels]'
+      when: satellite_version is version('6.15', '<=')
       notify: "Restart foreman"
 
     - name: Add needed allowed_labels
