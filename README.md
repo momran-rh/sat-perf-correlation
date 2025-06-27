@@ -25,7 +25,7 @@ Install proper Ansible collection to the Satellite:
 
 Then run:
 
-wget https://raw.githubusercontent.com/pmoravec/sat-perf-correlation/refs/heads/main/sat6-perf-monitor.yaml
+`wget https://raw.githubusercontent.com/pmoravec/sat-perf-correlation/refs/heads/main/sat6-perf-monitor.yaml`
 
 
 And run the playbook:
