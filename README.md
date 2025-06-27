@@ -23,6 +23,11 @@ Install proper Ansible collection to the Satellite:
 
 `ansible-galaxy collection install community.general -p /usr/share/ansible/collections/`
 
+Then run:
+
+wget https://raw.githubusercontent.com/pmoravec/sat-perf-correlation/refs/heads/main/sat6-perf-monitor.yaml
+
+
 And run the playbook:
 
 `ansible-playbook -e 'ansible_python_interpreter=/usr/bin/python3' sat6-perf-monitor.yaml`
